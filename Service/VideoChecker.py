@@ -1,10 +1,7 @@
 
-from xmlrpc.client import Boolean
-import numpy
 import scrapetube
 
-
-class LatestVideo:
+class VideoChecker:
 
     def __init__(self, channelUrl = "") -> None:
         self.__channelUrl = "https://www.youtube.com/c/DharMannOfficial"
@@ -21,7 +18,7 @@ class LatestVideo:
     def getVideoUrl(self): 
         return self.__videoUrl
 
-    def isLatestVideoNew(self, timeSearch = "days") -> Boolean:
+    def isLatestVideoNew(self, timeSearch = "days") -> bool:
         videos = scrapetube.get_channel(channel_url=self.__channelUrl, sort_by="newest", limit=1)
 
         for video in videos:
@@ -33,7 +30,7 @@ class LatestVideo:
                 return True
         return False
 
-    def videoIsLaughOrLose(self) -> Boolean:
+    def videoIsLaughOrLose(self) -> bool:
         import matplotlib.pyplot as plt
         import keras_ocr
 

@@ -1,5 +1,4 @@
-from LatestVideo import LatestVideo
+from Service.VideoChecker import VideoChecker
 
-latestVideo = LatestVideo()
-print(latestVideo.isLatestVideoNew(timeSearch="hours"))
-# print(latestVideo.getVideoUrl)
+videoChecker = VideoChecker()
+print(videoChecker.isLatestVideoNew(timeSearch="hours"))
