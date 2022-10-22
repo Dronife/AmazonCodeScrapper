@@ -4,6 +4,7 @@ import scrapetube
 class VideoChecker:
 
     def __init__(self, channelUrl = "") -> None:
+        self.__testThumbnail = "https://i.ytimg.com/vi/2WrX8QMbXMQ/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC-cZcnEZsdW2cH9rvzc3q8fP-J-Q"
         self.__channelUrl = "https://www.youtube.com/c/DharMannOfficial"
         self.__thumbnails = []
         self.__videoId = ""
@@ -29,6 +30,9 @@ class VideoChecker:
                 self.__videoUrl = video['navigationEndpoint']['commandMetadata']['webCommandMetadata']['url']
                 return True
         return False
+
+    def setTestThumbnail(self):
+        self.__thumbnails.append(self.__testThumbnail)
 
     def videoIsLaughOrLose(self) -> bool:
         import matplotlib.pyplot as plt

@@ -1,4 +1,5 @@
 from Service.VideoChecker import VideoChecker
 
 videoChecker = VideoChecker()
-print(videoChecker.isLatestVideoNew(timeSearch="hours"))
+videoChecker.setTestThumbnail()
+print(videoChecker.videoIsLaughOrLose())
