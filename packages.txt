@@ -1,0 +1,4 @@
+scrapetube
+matplotlib
+git+https://github.com/faustomorales/keras-ocr.git#egg=keras-ocr
+keras_ocr
