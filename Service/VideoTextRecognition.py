@@ -6,12 +6,19 @@ from pytube import YouTube
 
 import cv2
 import youtube_dl
-
+import pafy
 
 class VideoTextRecognition:
 
     def __init__(self) -> None:
         pass
+
+
+    def downloadVideoWithPafy(self, url):
+        video = pafy.new(url)
+        streams = video.streams
+        best = video.getbestvideo()
+        best.download()
 
     def downloadVideo(self, url):
 
