@@ -1,7 +1,7 @@
 import tensorflow as tf
 
-if(len(tf.config.list_physical_devices('GPU')) > 0):
-    tf.config.experimental.set_memory_growth(tf.config.experimental.list_physical_devices('CPU')[0], True)
+# if(len(tf.config.list_physical_devices('GPU')) > 0):
+tf.config.experimental.set_memory_growth(tf.config.experimental.list_physical_devices('CPU')[0], True)
 
 
 import os

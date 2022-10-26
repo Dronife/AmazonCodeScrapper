@@ -18,7 +18,7 @@ class VideoTextRecognition:
         yt = YouTube(url)
         # print(yt.streams)
         yt = yt.streams.filter(progressive=False, file_extension='mp4', res="1080p").first()
-        yt.download("/Users/Deimantas/Desktop/YoutubeScrapper/VIDEO")
+        yt.download("Media/VIDEO")
 
     def process_video_parallel(self, url, skip_frames, process_number):
         cap = cv2.VideoCapture(url)
