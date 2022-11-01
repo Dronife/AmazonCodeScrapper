@@ -4,6 +4,7 @@ import scrapetube
 class VideoChecker:
 
     def __init__(self, channelUrl = "") -> None:
+        self._imageToTest = "https://i.postimg.cc/4xJJQ1vP/image.png"
         self.__testThumbnail = "https://i.ytimg.com/vi/2WrX8QMbXMQ/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC-cZcnEZsdW2cH9rvzc3q8fP-J-Q"
         self.__channelUrl = "https://www.youtube.com/c/DharMannOfficial"
         self.__thumbnails = []
@@ -12,6 +13,19 @@ class VideoChecker:
         if(channelUrl):
              self.__channelUrl = channelUrl
         pass
+    
+    
+    def imageToTestKeras(self) -> None:
+        import matplotlib.pyplot as plt
+        import keras_ocr
+
+        pipeline = keras_ocr.pipeline.Pipeline()
+        images = [keras_ocr.tools.read(url) for url in [self._imageToTest]]
+        prediction_groups = pipeline.recognize(images)
+        predicted_image = prediction_groups[0]
+        for text, box in predicted_image:
+            print(text)
+
 
     def getVideoId(self):
         return self.__videoId
